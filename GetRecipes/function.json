@@ -1,0 +1,24 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "data",
+      "type": "blob",
+      "direction": "in",
+      "connection": "AzureWebJobsStorage",
+      "path": "data/data.json"
+    }
+  ]
+}
