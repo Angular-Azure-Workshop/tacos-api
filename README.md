@@ -8,13 +8,13 @@
 ## VS Code 
 
 1. Install VS Code Azure Functions extension from extensions panel or from the [marketplace]( https://marketplace.visualstudio.com/items/?WT.mc_id=workshop-github-js-team&itemName=ms-azuretools.vscode-azurefunctions)
-1. Go to the Azure panel and from the Azure Functions extension create a new function app and a new function of type HttpTrigger. Name it GetRecipes. 
-1. Run and debug locally 
+2. Go to the Azure panel and from the Azure Functions extension create a new function app and a new function of type HttpTrigger. Name it GetRecipes. 
+3. Run and debug locally 
 
 ## Read data from Blob Storage
 
 1. In your storage account create a new blob container named data and upload a file names data.json with the contents of https://tacofancy.blob.core.windows.net/data/data.json 
-1. Update function.json to include a new blob input binding. Read mode about it in [docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob/?WT.mc_id=workshop-github-js-team) 
+2. Update function.json to include a new blob input binding. Read mode about it in [docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob/?WT.mc_id=workshop-github-js-team) 
 
 ```json
 {
@@ -25,7 +25,7 @@
     "path": "data/data.json"
 }
 ```
-1. Update local.settings.json with Connection String for your storage account:
+3. Update local.settings.json with Connection String for your storage account:
 
 ```json
 {
@@ -36,7 +36,7 @@
   }
 }
 ```
-1. Update index.js to read data from binding
+4. Update index.js to read data from binding
 ```javascript
 module.exports = async function(context, req) {
   context.log('JavaScript HTTP trigger function processed a request.');
@@ -49,7 +49,7 @@ module.exports = async function(context, req) {
 ## Connect your Angular app to read data from the function 
 
 1. Update *tacos.service.ts* to use function url, i.e. http://localhost:7071/api/GetRecipes 
-1. Update local.settings.json to include CORS settings:
+2. Update local.settings.json to include CORS settings:
 ```json
 {
   "IsEncrypted": false,
@@ -63,4 +63,4 @@ module.exports = async function(context, req) {
   }
 }
 ```
-1. Restart function app - runtime doesn't listen to changes to local.settings.json file.
+3. Restart function app - runtime doesn't listen to changes to local.settings.json file.
