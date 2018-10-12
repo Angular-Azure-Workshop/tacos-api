@@ -12,13 +12,6 @@
       "type": "http",
       "direction": "out",
       "name": "res"
-    },
-    {
-      "name": "data",
-      "type": "blob",
-      "direction": "in",
-      "connection": "AzureWebJobsStorage",
-      "path": "data/data.json"
     }
   ]
 }
