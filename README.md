@@ -21,7 +21,7 @@
     "name": "data",
     "type": "blob",
     "direction": "in",
-    "connection": "AzureWebJobsStorage"
+    "connection": "AzureWebJobsStorage",
     "path": "data/data.json"
 }
 ```
